@@ -8,7 +8,9 @@ This gem is an adaptation of [spork-testunit](https://github.com/timcharper/spor
 Installation
 ------------
 
-`gem install spork-assert`
+```
+gem install spork-assert
+```
 
 
 Usage
@@ -16,9 +18,11 @@ Usage
 
 Run `spork` in one console.
 
-`spork assert`
+```
+spork assert
+```
 
-Use `sporktest` to run tests in another console. You can use assert's
+In another console, use `sporktest` to run your tests. You can use assert's
 rake test task names to run only a subset of your tests.
 
 ```
@@ -27,8 +31,18 @@ sporktest test:unit # run only unit tests
 sporktest test:functional:your_controller # run a single test
 ```
 
+**Note:** There is no need to use `bundle exec` when running the `sporktest`
+command. It is completely unnecessary and adds additional wait time before
+your tests are run.
+
 Configuring rails applications to work with spork-assert
 --------------------------------------------------------
+
+Add spork-assert to your Gemfile.
+
+```
+gem 'spork-assert', :require => false
+```
 
 Set up spork and assert in your `test/test_helper.rb` file.
 
